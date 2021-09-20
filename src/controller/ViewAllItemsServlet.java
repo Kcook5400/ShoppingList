@@ -32,10 +32,11 @@ public class ViewAllItemsServlet extends HttpServlet {
 		String path = "/shopping-list.jsp";
 		if(dao.showAllItems().isEmpty()) {
 			path = "/index.html";
-			
+		}	
+		//The redirect was inside the empty if statement so the redirect never happened.
 			getServletContext().getRequestDispatcher(path).forward(request, response);
 			
-		}
+		
 	}
 
 	/**
